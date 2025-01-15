@@ -25,10 +25,22 @@
             font-size: 54px; /* Marquee text size */
             color: #ff0000; /* Red color for marquee */
         }
+        @keyframes dance {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-10px, -10px) rotate(-5deg); }
+            50% { transform: translate(10px, 10px) rotate(5deg); }
+            75% { transform: translate(-10px, -10px) rotate(-5deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        .dancing-text {
+            display: inline-block; /* Allows transform to work properly */
+            font-size: 2em; /* Adjust size as needed */
+            animation: dance 1s infinite; /* Animation duration and infinite loop */
+        }
     </style>
 </head>
 <body>
-    <h1>🔥 THE DREAM TEAM DOE 🔥</h1>
+    <h1 class="dancing-text">🔥 THE DREAM TEAM DOE 🔥</h1>
     <h2>lane doe</h2>
     <h2>niss niss</h2>
     <h2>ry re</h2>
