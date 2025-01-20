@@ -42,6 +42,10 @@ section {
     background-color: #ffffff;
 }
 
+h2 {
+    color: #00796b;
+}
+
 .gallery-images {
     display: flex;
     flex-wrap: wrap;
