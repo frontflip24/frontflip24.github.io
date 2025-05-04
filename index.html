@@ -82,18 +82,54 @@
 <body>
     <h1 class="dancing-text">🐷🔥🤡🔥🐷</h1>
     <br>
+    <marquee scrollamount="20">g clown</marquee>
     <br>
     <h2>PLAN TODAY:</h2>
     <h3>do the right thing</h3>
     <h2>Timeline:</h2>
-    <h3>full q: tbd</h3>
-    <marquee scrollamount="20">g clown</marquee>
+    <h3>full q: n/a</h3>
     <br>
     <h2>Galley Menus</h2>
     <br>
     <a href="https://www.forcecom.uscg.mil/Portals/3/Documents/TCP/Galley%20Menu/APR%2028%20-%20May%2004.pdf?ver=H0VYn5y0pIz3Wt1velIZNg%3d%3d">APR 28-MAY 04</a>
     <br>
     <a href="https://www.forcecom.uscg.mil/Portals/3/Documents/TCP/Galley%20Menu/MAY%2005%20-%20MAY%2011.pdf?ver=YhIcUj2AaVh0kOpM8gxURg%3d%3d">MAY 05-MAY 11</a>
+    <br>
+    <ul id="dateList"></ul>
+    <script>
+        // Function to generate the next 5 future dates
+        function generateFutureDates(startDate, numberOfDates, intervalDays) {
+            const dates = [];
+            let currentDate = new Date(startDate);
+            const today = new Date();
+
+            // Loop until we find 5 future dates
+            while (dates.length < numberOfDates) {
+                if (currentDate > today) {
+                    dates.push(currentDate.toDateString());
+                }
+                currentDate.setDate(currentDate.getDate() + intervalDays);
+            }
+
+            return dates;
+        }
+
+        // Starting date: May 8, 2023
+        const startDate = new Date('2023-05-08');
+        const numberOfDates = 5;
+        const intervalDays = 5;
+
+        // Generate future dates
+        const futureDates = generateFutureDates(startDate, numberOfDates, intervalDays);
+
+        // Display dates in the HTML list
+        const dateList = document.getElementById('dateList');
+        futureDates.forEach(date => {
+            const listItem = document.createElement('li');
+            listItem.textContent = date;
+            dateList.appendChild(listItem);
+        });
+    </script>
     <br>
     <h2>Key Dates:</h2>
     <h3>Apr 30-Aug 29 - Deployment</h3>
